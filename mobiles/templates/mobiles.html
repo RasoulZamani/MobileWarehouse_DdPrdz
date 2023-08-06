@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-{% load static %}
 {% block extraheaders %} 
 {% endblock %}
 
@@ -8,7 +7,36 @@
 
 
 {% block content %}
-<h1>Searching in Mobiles As You Wish and Easily!</h1>
+ 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Brand</th>
+        <th scope="col">Nationality</th>
+        <th scope="col">Model</th>
+        <th scope="col">Price</th>
+        <th scope="col">Color</th>
+        <th scope="col">Screen Size</th>
+        <th scope="col">Availability</th>
+        <th scope="col">Country</th>
+      </tr>
+    </thead>
+    <tbody>
+ 
+    {% for mobile in results %}
+      <tr>
+          <td>{{mobile.brand}}</td>
+          <td>{{mobile.nationality}}</td>
+          <td>{{mobile.model}}</td>
+          <td>{{mobile.price}}</td>
+          <td>{{mobile.color}}</td>
+          <td>{{mobile.screen_size}}</td>
+          <td>{{mobile.available}}</td>
+          <td>{{mobile.country_maker}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
 <br></br>
-<h2>By selcting characteristics that you want, you can see result of your querysearch</h2>
 {% endblock %}

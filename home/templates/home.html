@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 
-{% load static %}
 {% block extraheaders %} 
-<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
 {% endblock %}
 
 {% block title %} Home {% endblock %}
 
 
 {% block content %}
+<br></br>
 <h1>Wellcome Home!</h1>
+
+<br></br>
+
+<h2>Searching in Mobiles As You Wish and Easily!</h2>
+<br></br>
+
+<form action="{% url 'mobiles:mobiles' %}" method="get">
+    <input name="nationality" type="text" placeholder="Enter nationality ">
+    <br></br>
+    <input name="brand" type="text" placeholder="Enter brand">
+    <br></br>
+    <input type="submit" value='Search'>
+  </form>
 {% endblock %}
