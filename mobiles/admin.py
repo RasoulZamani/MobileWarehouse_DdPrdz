@@ -5,7 +5,7 @@ from .models import Mobile
 class MobileAdmin(admin.ModelAdmin):
     search_fields=('brand','nationality','model',
                    'price','color',
-                   'country_maker')
+                   'country')
     list_filter = ('brand','nationality','model',
                    'price','color','screen_size',
-                   'country_maker','available')
+                   'country','available')
