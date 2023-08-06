@@ -9,7 +9,6 @@ def search_in_mobiles(request):
         q_nationality = request.GET.get('nationality')
         q_brand = request.GET.get('brand')
         q_CountryEqNational = request.GET.get('CountryEqNational')
-        print(q_CountryEqNational)
         if q_brand == '':
             q_brand = 'None'
         if q_nationality == '':
@@ -21,7 +20,10 @@ def search_in_mobiles(request):
         
         if q_CountryEqNational == 'Yes':
             results = results.filter(nationality__icontains=F('country'))
-
+            print(q_brand)
+            if q_brand=='None' and q_nationality=='None':
+                results = Mobile.objects.filter(nationality__icontains=F('country'))
+                 
     return render(request, 'mobiles.html',
                   {'brand': q_brand,'nationality': q_nationality, 'results': results})
 
