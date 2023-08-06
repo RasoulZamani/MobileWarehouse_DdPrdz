@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block extraheaders %} 
+{% endblock %}
+
+{% block title %} Search Results {% endblock %}
+
+
+{% block content %}
+ 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Brand</th>
+        <th scope="col">Nationality</th>
+        <th scope="col">Model</th>
+        <th scope="col">Price</th>
+        <th scope="col">Color</th>
+        <th scope="col">Screen Size</th>
+        <th scope="col">Availability</th>
+        <th scope="col">Country</th>
+      </tr>
+    </thead>
+    <tbody>
+ 
+    {% for mobile in results %}
+      <tr>
+          <td>{{mobile.brand}}</td>
+          <td>{{mobile.nationality}}</td>
+          <td>{{mobile.model}}</td>
+          <td>{{mobile.price}}</td>
+          <td>{{mobile.color}}</td>
+          <td>{{mobile.screen_size}}</td>
+          <td>{{mobile.available}}</td>
+          <td>{{mobile.country}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+<br></br>
+{% endblock %}

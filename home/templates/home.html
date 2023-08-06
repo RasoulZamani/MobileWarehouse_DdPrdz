@@ -15,23 +15,4 @@
 <p>It seems for next step we should add user registeration with different accebilitis, some users can add or mofify database and others just can search</p>
 <br></br>
 
-<h2>  Fill This Form to Search in Mobiles as You Wish, Easily!</h2>
-<br></br>
-
-<form action="{% url 'mobiles:mobiles' %}" method="get">
-    <p> Enter nationality of mobile like: Korea, China, ... </p>
-    <input name="nationality" type="text" placeholder="nationality ">
-    <br></br>
-    <p> Enter the brand name of mobile like:Sumsung, Apple, ... </p>
-    <input name="brand" type="text" placeholder="brand">
-    <br></br>
-    <p> If you want that your phone hase same nationality and country maker check this bottom:</p>
-    <input name="CountryEqNational" type="checkbox" value='Yes'>
-    
-    
-    <br></br>
-
-    <input type="submit" value='Search!'>
-  </form>
-
 {% endblock %}

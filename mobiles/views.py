@@ -2,8 +2,9 @@ from django.shortcuts import render
 from .models import Mobile
 from django.db.models import Q,F
 
-
-def search_in_mobiles(request):
+def search_mobiles(request):
+    return render(request,'search_mobiles.html')
+def search_results(request):
     """searching in mobile warehouse"""
     if request.method == "GET":
         q_nationality = request.GET.get('nationality')
@@ -24,7 +25,7 @@ def search_in_mobiles(request):
             if q_brand=='None' and q_nationality=='None':
                 results = Mobile.objects.filter(nationality__icontains=F('country'))
                  
-    return render(request, 'mobiles.html',
+    return render(request, 'search_results.html',
                   {'brand': q_brand,'nationality': q_nationality, 'results': results})
 
     
